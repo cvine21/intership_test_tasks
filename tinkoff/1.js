@@ -49,14 +49,21 @@ rl.on("line", (line) => {
 	let j = 1;
 
 	for (let i = 1; i < name.length; i++) {
-		if (name[i] === " ") continue;
-		if (color[j] === color[j - 1] && name[i] !== " ") {
+		if (name[i] === " ") {
+			continue;
+		}
+
+		if (color[j] === color[j - 1] && name[i - 1] !== " ") {
 			uglyWordsCount++;
+
 			while (name[i] && name[i] !== " ") {
 				i++;
 				j++;
 			}
+
+			continue;
 		}
+
 		j++;
 	}
 
