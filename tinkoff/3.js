@@ -23,13 +23,37 @@
 	Вывод: 3 6
 */
 
+// const readline = require("readline");
+
+// const rl = readline.createInterface({
+// 	input: process.stdin,
+// });
+
+// const lines = [];
+
+// rl.on("line", (line) => {
+// 	lines.push(line);
+// }).on("close", () => {
+// 	const [n] = lines;
+// 	let num = +n;
+// 	let l = Math.floor(num / 2);
+// 	let r = num - l;
+
+// 	while (num % 2 && r % l) {
+// 		r++;
+// 		l--;
+// 	}
+
+// 	process.stdout.write(`${l} ${r}`);
+// });
+
 const readline = require("readline");
 
 const rl = readline.createInterface({
 	input: process.stdin,
 });
 
-let lines = [];
+const lines = [];
 
 rl.on("line", (line) => {
 	lines.push(line);
@@ -39,7 +63,7 @@ rl.on("line", (line) => {
 	let l = Math.floor(num / 2);
 	let r = num - l;
 
-	while (num % 2 !== 0 && r % l !== 0) {
+	while (num % 2 && r % l) {
 		r++;
 		l--;
 	}

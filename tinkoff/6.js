@@ -24,17 +24,56 @@
 		7
 */
 
+// const readline = require("readline");
+
+// const rl = readline.createInterface({
+// 	input: process.stdin,
+// });
+
+// let lines = [];
+
+// rl.on("line", (line) => {
+// 	lines.push(line);
+// }).on("close", () => {
+// 	const [q, ...k] = lines;
+// 	const res = [];
+// 	const set = [];
+// 	const maxXor = {};
+
+// 	const findMaxXor = (set, n) => {
+// 		if (!set.length) return 0;
+
+// 		let max = set[0] ^ n;
+
+// 		set.forEach((item) => {
+// 			if ((item ^ n) > max) max = item ^ n;
+// 			maxXor[item] = max;
+// 		});
+
+// 		return max;
+// 	};
+
+// 	for (let i = 0; i < +q; i++) {
+// 		if (!maxXor[k[i]]) {
+// 			maxXor[k[i]] = findMaxXor(set, +k[i]);
+// 		}
+
+// 		res.push(maxXor[k[i]]);
+// 		set.push(+k[i]);
+// 	}
+
+// 	process.stdout.write(res.join("\n"));
+// });
+
 const readline = require("readline");
 
 const rl = readline.createInterface({
 	input: process.stdin,
 });
 
-let lines = [];
+const lines = [];
 
-rl.on("line", (line) => {
-	lines.push(line);
-}).on("close", () => {
+rl.on("line", (line) => lines.push(line)).on("close", () => {
 	const [q, ...k] = lines;
 	const res = [];
 	const set = [];

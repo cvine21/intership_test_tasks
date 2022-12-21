@@ -39,7 +39,7 @@ const rl = readline.createInterface({
 	input: process.stdin,
 });
 
-let lines = [];
+const lines = [];
 
 rl.on("line", (line) => {
 	lines.push(line);
@@ -63,7 +63,6 @@ rl.on("line", (line) => {
 
 			continue;
 		}
-
 		j++;
 	}
 
