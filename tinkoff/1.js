@@ -35,12 +35,20 @@
 
 const readline = require("readline");
 
+/**
+* Создаем экзеспляр интерфейся, где указываем, с какого потока идет ввод.
+*  В данном случае стдандартный поток ввода
+*/
 const rl = readline.createInterface({
 	input: process.stdin,
 });
 
 const lines = [];
 
+/**
+* Событие line. Каждую новую строку ввода записывает в массив lines
+* При завершении ввода выполняется код
+*/
 rl.on("line", (line) => {
 	lines.push(line);
 }).on("close", () => {
@@ -66,5 +74,7 @@ rl.on("line", (line) => {
 		j++;
 	}
 
+	
+	// Запись на стандартный поток вывода
 	process.stdout.write(uglyWordsCount.toString());
 });
